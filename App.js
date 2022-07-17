@@ -7,15 +7,16 @@ import {
   Text,
 } from 'react-native';
 import AntDesign from 'react-native-vector-icons/AntDesign';
+import RootNavigation from './src/components/navigation/RootNavigation';
 import HomeScreen from './src/screens/HomeScreen';
 
 const App = () => {
   const isDarkMode = useColorScheme() === 'dark';
 
   return (
-    <SafeAreaView>
-      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <HomeScreen />
+    <SafeAreaView style={{flex: 1, backgroundColor: 'black'}}>
+      <StatusBar barStyle={!isDarkMode ? 'light-content' : 'dark-content'} />
+      <RootNavigation />
     </SafeAreaView>
   );
 };
